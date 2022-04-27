@@ -1,0 +1,17 @@
+---
+# tasks file for gunicorn
+  - name: shell commands
+    shell: mkdir -p /opt/app && cd /opt/app
+
+  - name: copying start.sh file
+    template:
+        src: start.sh
+        dest: /
+  - name: copying start_celery_beat.sh file
+    template:
+        src: start_celery_beat.sh
+        dest: /
+  - name: copying start_celery_worker.sh file
+    template:
+        src: start_celery_worker.sh
+        dest: /
