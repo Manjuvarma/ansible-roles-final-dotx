@@ -1,0 +1,12 @@
+---
+- name: installations on node
+  hosts: Slave
+  become_method: sudo
+  become: yes
+  gather_facts: true
+  roles:
+    - common
+    - db
+    - hydrostats
+    - nginx
+    - gunicorn
